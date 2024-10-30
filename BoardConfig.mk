@@ -154,3 +154,6 @@ TARGET_USES_LOGD := true
 
 # Backups
 TW_BACKUP_EXCLUSIONS := /data/fonts
+
+# Fastbootd
+TW_INCLUDE_FASTBOOTD :=true
