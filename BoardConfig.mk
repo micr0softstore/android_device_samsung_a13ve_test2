@@ -58,7 +58,6 @@ BOARD_MKBOOTIMG_ARGS:= \
 --ramdisk_offset=0x07c08000 \
 --tags_offset=0x0bc08000 \
 --header_version=2 \
---hashtype=sha1 \
 --pagesize=2048 \
 --dtb=$(TARGET_PREBUILT_DTB)
 
