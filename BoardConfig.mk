@@ -42,12 +42,10 @@ TARGET_NO_BOOTLOADER := true
 # Display
 TARGET_SCREEN_DENSITY := 450
 
-# Kernel
-BOARD_BOOTIMG_HEADER_VERSION := 2
-BOARD_KERNEL_BASE := 0x40078000
+# Cmdline
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 loop.max_part=7
-BOARD_KERNEL_PAGESIZE := 2048
 
+TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
@@ -58,11 +56,15 @@ BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 # mkbootimg
 BOARD_MKBOOTIMG_ARGS:= \
 --board=SRPVD04A007 \
+--base=0x40078000 \
 --dtb_offset=0x0bc08000 \
 --kernel_offset=0x00008000 \
+--second_offset=0xbff88000 \
 --ramdisk_offset=0x07c08000 \
 --tags_offset=0x0bc08000 \
---header_version=$(BOARD_BOOTIMG_HEADER_VERSION) \
+--header_version=2 \
+--hashtype=sha1 \
+--pagesize=2048 \
 --dtb=$(TARGET_PREBUILT_DTB)
 
 # Partitions
