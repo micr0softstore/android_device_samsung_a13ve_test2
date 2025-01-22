@@ -69,7 +69,7 @@ jobs:
 
     - name: Clone DT
       run: |
-        git clone https://github.com/balazskokai/android_device_samsung_a13ve -b main ./device/samsung/a13ve
+        git clone https://github.com/balazskokai/android_device_samsung_a13ve_test2 -b main ./device/samsung/a13ve
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
       
 
